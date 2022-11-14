@@ -15,6 +15,7 @@ import zipfile
 import sys
 import time
 import ssl
+import requests
 
 ssl._create_default_https_context = ssl._create_unverified_context
 from flask import Flask,request,render_template,send_from_directory,jsonify
@@ -372,6 +373,12 @@ def flask_test():
 	print("text is", text)
 	if(text==""):
 		return "";
+	# inpa = text
+	# r = requests.post(url='https://kabita-choudhary-summary.hf.space/run/predict', json={"data": [inpa]})
+	# dic = (r.json())
+	# print(dic)
+	# print(dic["data"][0])
+	# text = dic["data"][0]
 	take_input(text)
 
 	# fills the json 
